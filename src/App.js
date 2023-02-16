@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
 
-function App() {
+// COMPONENTS
+import Header from "./components/Header";
+import ItemList from "./components/ItemList";
+
+// 5 - IMPORTO MI CONTEXT PROVIDER
+import { ItemsProvider } from "./itemsContext";
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ItemsProvider>
+      <div className="App">
+        <Header />
+        <ItemList />
+      </div>
+    </ItemsProvider>
   );
-}
+};
 
 export default App;
